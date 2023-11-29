@@ -19,6 +19,7 @@ morse_code_dict = {
     '9': '----.', '0': '-----',
     ' ': '/'
 }
+
 def encrypt(text):
     """Encrypts a given English phrase into Morse code."""
     encrypted_text = ''
@@ -43,3 +44,26 @@ def decrypt(morse_code):
             decrypted_text += ' '
 
     return decrypted_text
+
+def main():
+    """Main function to run the program."""
+    while True:
+        print("1. Encrypt\n2. Decrypt\n3. Quit")
+        choice = input("Enter your choice (1/2/3): ")
+
+        if choice == '1':
+            phrase = input("Enter the phrase to encrypt: ")
+            encrypted_phrase = encrypt(phrase)
+            print(f"Encrypted Morse Code: {encrypted_phrase}")
+        elif choice == '2':
+            morse_code = input("Enter the Morse code to decrypt: ")
+            decrypted_text = decrypt(morse_code)
+            print(f"Decrypted Text: {decrypted_text}")
+        elif choice == '3':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main()
